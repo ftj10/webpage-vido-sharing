@@ -3,7 +3,7 @@
 </script>
 
 <template>
-<div>Welcome to Tommy's Sharing</div>
+<div>Tommy</div>
 </template>
 
 <style scoped>

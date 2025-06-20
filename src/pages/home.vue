@@ -5,7 +5,7 @@ const user = useUserStore();
 
 
 <template>
-    <div>Tommy</div>
+    <div class="text-xs text-red-500">Tommy</div>
     <span>{{ user.token }}</span>
     <el-button type="primary">button</el-button>
     <el-icon><Search /></el-icon>

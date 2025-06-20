@@ -5,6 +5,6 @@ const user = useUserStore();
 
 
 <template>
-    <div>TOmmy</div>
+    <div>Tommy</div>
     <span>{{ user.token }}</span>
 </template>

@@ -7,4 +7,6 @@ const user = useUserStore();
 <template>
     <div>Tommy</div>
     <span>{{ user.token }}</span>
+    <el-button type="primary">button</el-button>
+    <el-icon><Search /></el-icon>
 </template>

@@ -44,10 +44,12 @@ const user = useUserStore();
             <el-button size="large" type="primary" @click="modal.showRegister">Register</el-button>
         </div>
         <div class="ml-auto" v-else>
-            <el-button size="large" @click="user.logout">Logout</el-button>
-            <span class="flex items-center">{{ user.currentUser }}</span>
+            <el-popconfirm title="want to log out?" @confirm="user.logout">
+                <template #reference>
+                    <el-button>{{ user.users.account }}</el-button>
+                </template>
+            </el-popconfirm>
         </div>
-
         <Register />
         <Login />
     </div>

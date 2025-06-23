@@ -29,7 +29,7 @@ function handleLogin() {
     <el-dialog width="400px" v-model="modal.loginVisible" class="relative">
         <h1 class="text-center text-[#404040] text-22px font-normal mb-1.5">Login</h1>
         <div class="pb-44px flex items-center justify-center w-full">
-            <el-form name="login" autoComplete="off">
+            <el-form name="login" autoComplete="off" @submit.prevent="handleLogin">
                 <el-form-item name="account">
                     <el-input placeholder="Enter username" v-model="account"></el-input>
                 </el-form-item>
@@ -39,7 +39,7 @@ function handleLogin() {
                 <el-form-item>
                     <el-button 
                         type="primary" 
-                        @click="handleLogin"
+                        native-type="submit"
                         class="flex w-full items-center justify-center bg-[#444b52] text-white rounded-full"
                     >
                         Login

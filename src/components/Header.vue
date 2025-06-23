@@ -5,8 +5,7 @@ import { useModalStore } from "@/store/modal.js"
 import { Search } from '@element-plus/icons-vue';
 import { useUserStore } from '@/store/user';
 import Login from './Login.vue';
-
-import Collapse from './Collapse.vue';
+import DropdownMenu from './DropdownMenu.vue';
 
 const input = ref("");
 const modal = useModalStore();
@@ -24,21 +23,7 @@ const user = useUserStore();
         <div class="flex items-center gap-12">
             <a href="#">Home page</a>
 
-            <!-- <a href="#">
-                <div>
-                    <span>Website Cited</span>
-                    <el-icon>
-                        <ArrowDownBold />
-                    </el-icon>
-                </div>
-            </a> -->
-            <div>
-                <el-collapse v-model="activeNames" class="!border-0">
-                    <Collapse />
-                </el-collapse>
-            </div>
-
-
+            <DropdownMenu />
 
             <a href="#">
                 <el-input v-model="input" class="w-full" placeholder="Enter The Name Of Game">

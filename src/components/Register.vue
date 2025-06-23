@@ -1,6 +1,6 @@
 <script setup>
 import { ElMessage } from 'element-plus';
-import { ref } from 'vue';
+import { ref ,watch} from 'vue';
 import { useUserStore } from '@/store/user';
 import { useModalStore } from '@/store/modal';
 
@@ -10,6 +10,14 @@ const rePassword = ref("");
 
 const user = useUserStore();
 const modal = useModalStore();
+
+watch(() => modal.regVisible, (isVisible) => {
+  if (isVisible) {
+    account.value = "";
+    password.value = "";
+    rePassword.value = "";
+  }
+});
 
 function handleFinish() {
     if (password.value !== rePassword.value) {
@@ -23,6 +31,9 @@ function handleFinish() {
     }
 
     user.register(account.value, password.value);
+    account.value = "";
+    password.value = "";
+    rePassword.value = "";
     modal.closeAllModals();
     ElMessage.success("Register successful!");
 }

@@ -1,12 +1,14 @@
 <script setup>
-import Register from '@/components/Register.vue'; 
-import {ref} from "vue";
-//import {useModalStore} from "@/store/model.js"
+import Register from '@/components/Register.vue';
+import { ref } from "vue";
+import { useModalStore } from "@/store/modal.js"
 import { Search } from '@element-plus/icons-vue';
-import { useModal } from 'element-plus';
+import { useUserStore } from '@/store/user';
+import Login from './Login.vue';
 
 const input = ref("");
 const modal = useModalStore();
+const user = useUserStore();
 </script>
 
 <template>
@@ -37,12 +39,17 @@ const modal = useModalStore();
             </a>
         </div>
 
-        <div class="ml-auto">
-            <el-button link-size="large">login</el-button>
-            <el-button link-size="large">Register</el-button>
+        <div class="ml-auto" v-if="!(user.isLogin)">
+            <el-button size="large" @click="modal.showLogin">Login</el-button>
+            <el-button size="large" type="primary" @click="modal.showRegister">Register</el-button>
+        </div>
+        <div class="ml-auto" v-else>
+            <el-button size="large" @click="user.logout">Logout</el-button>
+            <span class="flex items-center">{{ user.currentUser }}</span>
         </div>
 
-        <!-- <Register /> -->
+        <Register />
+        <Login />
     </div>
 </template>
 

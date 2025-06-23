@@ -6,6 +6,8 @@ import { Search } from '@element-plus/icons-vue';
 import { useUserStore } from '@/store/user';
 import Login from './Login.vue';
 
+import Collapse from './Collapse.vue';
+
 const input = ref("");
 const modal = useModalStore();
 const user = useUserStore();
@@ -21,12 +23,22 @@ const user = useUserStore();
         </div>
         <div class="flex items-center gap-12">
             <a href="#">Home page</a>
+
+            <!-- <a href="#">
+                <div>
+                    <span>Website Cited</span>
+                    <el-icon>
+                        <ArrowDownBold />
+                    </el-icon>
+                </div>
+            </a> -->
             <div>
-                <span>Website Cited</span>
-                <el-icon>
-                    <ArrowDownBold />
-                </el-icon>
+                <el-collapse v-model="activeNames" class="!border-0">
+                    <Collapse />
+                </el-collapse>
             </div>
+
+
 
             <a href="#">
                 <el-input v-model="input" class="w-full" placeholder="Enter The Name Of Game">

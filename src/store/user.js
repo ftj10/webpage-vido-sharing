@@ -2,7 +2,8 @@ import { defineStore } from "pinia";
 import { ref } from 'vue';
 import { ElMessage } from "element-plus";
 
-export const useUserStore = defineStore("user", () => {
+export const useUserStore = defineStore
+("user", () => {
     const currentUser = ref("");
     const isLogin = ref(false);
     const users = ref({
@@ -58,4 +59,9 @@ export const useUserStore = defineStore("user", () => {
         logout,
         checkLoginStatus
     };
+},
+{
+    persist:{
+        enabled: true,
+    },
 });

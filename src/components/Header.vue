@@ -6,9 +6,10 @@ import { Search } from '@element-plus/icons-vue';
 import { useUserStore } from '@/store/user';
 import Login from './Login.vue';
 import DropdownMenu from './DropdownMenu.vue';
+import JsonSearchTest from './JsonSearchTest.vue';
 
 const input = ref("");
-const data = ref(['minecraft','csgo','stellar blade']); //data from backend
+const data = ref(['minecraft', 'csgo', 'stellar blade']); //data from backend
 const searchResults = ref([])
 
 const modal = useModalStore();
@@ -34,13 +35,14 @@ const performSearch = () => {
             <span class="text-xs text-amber-500 transform -rotate-3 origin-left ml-12">sharing</span>
         </div>
 
-        <div class="flex items-center gap-12">
+        <div class="flex items-center gap-12 flex-grow">
             <a href="#" class="font-100">Home page</a>
 
             <DropdownMenu />
+
             <!-- search -->
             <div class="relative">
-                <el-input v-model="input" class="w-full" placeholder="Enter The Name Of Game"
+                <!-- <el-input v-model="input" class="w-full" placeholder="Enter The Name Of Game"
                     @keyup.enter="performSearch">
                     <template #append>
                         <el-button @click="performSearch">
@@ -49,8 +51,8 @@ const performSearch = () => {
                             </el-icon>
                         </el-button>
                     </template>
-                </el-input>
-
+</el-input> -->
+                <JsonSearchTest />
                 <!-- Search results dropdown -->
                 <div v-if="searchResults.length > 0"
                     class="absolute z-50 mt-1 w-full bg-white shadow-lg rounded-md max-h-60 overflow-auto">
@@ -60,6 +62,8 @@ const performSearch = () => {
                     </div>
                 </div>
             </div>
+
+
             <!-- Login and Register -->
             <div class="ml-auto" v-if="!(user.isLogin)">
                 <el-button size="large" @click="modal.showLogin">Login</el-button>

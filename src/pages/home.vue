@@ -4,7 +4,6 @@ import Header from '@/components/Header.vue';
 import Classify from '@/components/Classify.vue';
 import Swiper from '@/components/Swiper.vue';
 import UserOrUnLogin from '@/components/UserOrUnLogin.vue';
-
 import { ref } from 'vue';
 
 const surprise = ref(false);

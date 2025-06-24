@@ -38,7 +38,9 @@ const searchJsonPlaceholder = async () => {
     >
       <template #append>
         <el-button @click="searchJsonPlaceholder" :loading="isLoading">
-          Search
+          <el-icon>
+            <Search />
+          </el-icon>
         </el-button>
       </template>
     </el-input>

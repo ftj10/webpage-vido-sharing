@@ -42,16 +42,6 @@ const performSearch = () => {
 
             <!-- search -->
             <div class="relative">
-                <!-- <el-input v-model="input" class="w-full" placeholder="Enter The Name Of Game"
-                    @keyup.enter="performSearch">
-                    <template #append>
-                        <el-button @click="performSearch">
-                            <el-icon>
-                                <Search />
-                            </el-icon>
-                        </el-button>
-                    </template>
-</el-input> -->
                 <JsonSearchTest />
                 <!-- Search results dropdown -->
                 <div v-if="searchResults.length > 0"

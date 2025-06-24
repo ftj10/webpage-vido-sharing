@@ -35,7 +35,7 @@ const performSearch = () => {
         </div>
 
         <div class="flex items-center gap-12">
-            <a href="#">Home page</a>
+            <a href="#" class="font-100">Home page</a>
 
             <DropdownMenu />
             <!-- search -->

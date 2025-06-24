@@ -14,17 +14,16 @@ import { ArrowDownBold } from '@element-plus/icons-vue';
       <el-dropdown-menu class="dropdown-menu">
         <div class="px-3 py-2 grid grid-cols-2 gap-4 w-64">
           <div>
-            <h4 class="font-medium text-gray-800 mb-2">Mode</h4>
+            <h4 class="font-medium text-center text-gray-800 mb-2">Mode</h4>
             <ul class="space-y-1 text-sm">
-              <li><a href="#" class="dropdown-item">Design Mode</a></li>
-              <li><a href="#" class="dropdown-item">Development Mode</a></li>
+              <li><a href="https://www.nexusmods.com/" class="dropdown-item">Mode Website</a></li>
             </ul>
           </div>
           <div>
-            <h4 class="font-medium text-gray-800 mb-2">Video</h4>
+            <h4 class="font-medium text-center text-gray-800 mb-2">Video</h4>
             <ul class="space-y-1 text-sm">
-              <li><a href="#" class="dropdown-item">Tutorial</a></li>
-              <li><a href="#" class="dropdown-item">Demo</a></li>
+              <li><a href="https://www.bilibili.com/" class="dropdown-item">bilibili</a></li>
+              <li><a href="https://www.douyin.com" class="dropdown-item">CN Tiktok</a></li>
             </ul>
           </div>
         </div>

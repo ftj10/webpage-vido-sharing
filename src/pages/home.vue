@@ -2,6 +2,7 @@
 // Main layout components
 import Header from '@/components/Header.vue';  
 import Classify from '@/components/Classify.vue';
+import Swiper from '@/components/Swiper.vue';
 </script>
 
 <template>
@@ -19,7 +20,7 @@ import Classify from '@/components/Classify.vue';
     </header>
 
     <div class="w-[1200px] mx-auto mt-4 mb-4">
-      <div class="flex items-center justify-between">
+      <div class="flex items-center ">
         <Classify />
 
         <Swiper />

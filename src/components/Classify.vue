@@ -4,7 +4,7 @@ import ClassifyItem from './ClassifyItem.vue';
 const list = ["Csgo",
     "Minecraft",
     "Stellat Blade",
-    "Sekiro：Shadows Die Twice",
+    "Sekiro: Shadows Die Twice",
     "Elden Ring",
     "Genshin Impact"]
 

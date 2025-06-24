@@ -1,7 +1,7 @@
 <script setup>
 // Main layout components
 import Header from '@/components/Header.vue';  
-import { User } from '@element-plus/icons-vue/dist/types';
+import Classify from '@/components/Classify.vue';
 </script>
 
 <template>

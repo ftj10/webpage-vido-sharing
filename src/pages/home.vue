@@ -1,6 +1,7 @@
 <script setup>
 // Main layout components
 import Header from '@/components/Header.vue';  
+import { User } from '@element-plus/icons-vue/dist/types';
 </script>
 
 <template>
@@ -16,6 +17,18 @@ import Header from '@/components/Header.vue';
         <Header></Header>
       </div>
     </header>
+
+    <div class="w-[1200px] mx-auto mt-4 mb-4">
+      <div class="flex items-center justify-between">
+        <Classify />
+
+        <Swiper />
+
+        <UserOrUnLogin />
+
+      </div>
+
+    </div>
 
     
   </div>

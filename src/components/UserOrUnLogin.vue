@@ -12,6 +12,8 @@ const modal = useModalStore();
             <div v-if="user.isLogin" class="flex flex-col items-center justify-center h-full">
                 Welcome:
                 <span class="text-orange font-bold">{{ user.currentUser }}</span>
+                <img class=" mb-10 mt-10"
+                    src="/Users/ftj_tom/Desktop/Vue Projects/webpage-vido sharing/public/IMG_6905.GIF">
                 <el-button class="text-center bg-#ff602a cursor-pointer rounded leading-2" @click="user.logout">
                     Logout
                 </el-button>
@@ -20,8 +22,7 @@ const modal = useModalStore();
             <div v-else class="flex flex-col items-center justify-center h-full">
                 <img class=" mb-10 mt-10"
                     src="/Users/ftj_tom/Desktop/Vue Projects/webpage-vido sharing/public/IMG_6904.GIF">
-                <el-button @click="modal.switchLoginVisible"
-                    class="text-center cursor-pointer">
+                <el-button @click="modal.switchLoginVisible" class="text-center cursor-pointer">
                     Login
                 </el-button>
             </div>

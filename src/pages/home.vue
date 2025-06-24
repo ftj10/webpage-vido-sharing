@@ -3,6 +3,7 @@
 import Header from '@/components/Header.vue';  
 import Classify from '@/components/Classify.vue';
 import Swiper from '@/components/Swiper.vue';
+import UserOrUnLogin from '@/components/UserOrUnLogin.vue';
 </script>
 
 <template>
@@ -20,7 +21,7 @@ import Swiper from '@/components/Swiper.vue';
     </header>
 
     <div class="w-[1200px] mx-auto mt-4 mb-4">
-      <div class="flex items-center ">
+      <div class="flex items-center gap-8">
         <Classify />
 
         <Swiper />

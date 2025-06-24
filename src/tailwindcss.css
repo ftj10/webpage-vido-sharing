@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .dropdown-link {
+        @apply cursor-pointer flex items-center text-black hover:text-indigo-500;
+    }
+
+    .dropdown-menu {
+        @apply !p-0;
+    }
+
+    .dropdown-item {
+        @apply block px-2 py-1 rounded hover:bg-gray-100 hover:text-indigo-500;
+    }
+}

@@ -1,5 +1,5 @@
 <script setup>
-import { ArrowDownBold } from '@element-plus/icons-vue'
+import { ArrowDownBold } from '@element-plus/icons-vue';
 </script>
 
 <template>
@@ -32,6 +32,3 @@ import { ArrowDownBold } from '@element-plus/icons-vue'
     </template>
   </el-dropdown>
 </template>
-
-
-

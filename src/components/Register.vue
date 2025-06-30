@@ -1,6 +1,6 @@
 <script setup>
 import { ElMessage } from 'element-plus';
-import { ref ,watch} from 'vue';
+import { ref, watch } from 'vue';
 import { useUserStore } from '@/store/user';
 import { useModalStore } from '@/store/modal';
 
@@ -11,17 +11,34 @@ const rePassword = ref("");
 const user = useUserStore();
 const modal = useModalStore();
 
+const PASSWORD_REGEX = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@!$#%^&*]).{8,}$/;
+
+function validatePassword() {
+    if (!PASSWORD_REGEX.test(password.value)) {
+        ElMessage.warning(
+            "Password must be at least 8 characters long, " +
+            "contain uppercase & lowercase letters, a number, and a special character (@!$#%^&*)"
+        );
+        return false;
+    }
+    return true;
+}
+
 watch(() => modal.regVisible, (isVisible) => {
-  if (isVisible) {
-    account.value = "";
-    password.value = "";
-    rePassword.value = "";
-  }
+    if (isVisible) {
+        account.value = "";
+        password.value = "";
+        rePassword.value = "";
+    }
 });
 
 function handleFinish() {
     if (password.value !== rePassword.value) {
         ElMessage.warning("Two passwords don't match");
+        return;
+    }
+
+    if (!validatePassword()) {
         return;
     }
 
@@ -49,6 +66,9 @@ function handleFinish() {
                 </el-form-item>
                 <el-form-item name="password">
                     <el-input type="password" placeholder="Enter password" v-model="password"></el-input>
+                    <div class="text-xs text-gray-500 mt-1">
+                        Requirements: 8+ chars, uppercase, lowercase, number, special (@!$#%^&*)
+                    </div>
                 </el-form-item>
                 <el-form-item name="re-password">
                     <el-input type="password" placeholder="Confirm password" v-model="rePassword"></el-input>

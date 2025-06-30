@@ -1,6 +1,6 @@
 <script setup>
 import { ElMessage } from 'element-plus';
-import { ref, watch } from 'vue';
+import { ref, watch ,computed} from 'vue';
 import { useUserStore } from '@/store/user';
 import { useModalStore } from '@/store/modal';
 
@@ -11,7 +11,13 @@ const rePassword = ref("");
 const user = useUserStore();
 const modal = useModalStore();
 
+
+const showPasswordHelp = ref(true);
 const PASSWORD_REGEX = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@!$#%^&*]).{8,}$/;
+const isPasswordValid = computed(() => PASSWORD_REGEX.test(password.value));
+watch(password, () => {
+    showPasswordHelp.value = !isPasswordValid.value;
+});
 
 function validatePassword() {
     if (!PASSWORD_REGEX.test(password.value)) {
@@ -66,9 +72,11 @@ function handleFinish() {
                 </el-form-item>
                 <el-form-item name="password">
                     <el-input type="password" placeholder="Enter password" v-model="password"></el-input>
-                    <div class="text-xs text-gray-500 mt-1">
-                        Requirements: 8+ chars, uppercase, lowercase, number, special (@!$#%^&*)
+                    <div v-if="showPasswordHelp" class="text-xs text-red-500 mt-0.5">
+                        Warning: 8+ chars, at least one uppercase, lowercase, number, special (@!$#%^&*)
                     </div>
+
+                    
                 </el-form-item>
                 <el-form-item name="re-password">
                     <el-input type="password" placeholder="Confirm password" v-model="rePassword"></el-input>

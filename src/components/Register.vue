@@ -1,6 +1,6 @@
 <script setup>
 import { ElMessage } from 'element-plus';
-import { ref, watch ,computed} from 'vue';
+import { ref, watch, computed } from 'vue';
 import { useUserStore } from '@/store/user';
 import { useModalStore } from '@/store/modal';
 
@@ -72,11 +72,9 @@ function handleFinish() {
                 </el-form-item>
                 <el-form-item name="password">
                     <el-input type="password" placeholder="Enter password" v-model="password"></el-input>
-                    <div v-if="showPasswordHelp" class="text-xs text-red-500 mt-0.5">
+                    <div v-if="showPasswordHelp" class="text-xs text-red-200 mt-0.5">
                         Warning: 8+ chars, at least one uppercase, lowercase, number, special (@!$#%^&*)
                     </div>
-
-                    
                 </el-form-item>
                 <el-form-item name="re-password">
                     <el-input type="password" placeholder="Confirm password" v-model="rePassword"></el-input>

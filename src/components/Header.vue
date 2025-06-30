@@ -7,6 +7,7 @@ import { useUserStore } from '@/store/user';
 import Login from './Login.vue';
 import DropdownMenu from './DropdownMenu.vue';
 import JsonSearchTest from './JsonSearchTest.vue';
+import SearchWithShowing from './JsonSearchTest2.vue'
 
 const input = ref("");
 const data = ref(['minecraft', 'csgo', 'stellar blade']); //data from backend
@@ -14,6 +15,8 @@ const searchResults = ref([])
 
 const modal = useModalStore();
 const user = useUserStore();
+
+const SearchWithShow = ref(false);
 
 const performSearch = () => {
     if (!input.value.trim()) {
@@ -41,18 +44,15 @@ const performSearch = () => {
             <DropdownMenu />
 
             <!-- search -->
-            <div class="relative">
+            <div class="relative" v-show="!SearchWithShow">
                 <JsonSearchTest />
-                <!-- Search results dropdown -->
-                <div v-if="searchResults.length > 0"
-                    class="absolute z-50 mt-1 w-full bg-white shadow-lg rounded-md max-h-60 overflow-auto">
-                    <div v-for="(result, index) in searchResults" :key="index"
-                        class="px-4 py-2 hover:bg-gray-100 cursor-pointer" @click="selectGame(result)">
-                        {{ result }}
-                    </div>
-                </div>
             </div>
-
+            <div class="relative" v-show="SearchWithShow">
+                <SearchWithShowing />
+            </div>
+            <div>
+                <el-switch v-model="SearchWithShow" size="small" active-text="SearchWithShow" inactive-text="SearchOnly" />
+            </div>
 
             <!-- Login and Register -->
             <div class="ml-auto" v-if="!(user.isLogin)">

@@ -16,7 +16,7 @@ const searchJsonPlaceholder = async () => {
     const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
       params: {
         q: searchQuery.value,
-        _limit: 5
+        _limit: 10
       }
     })
     results.value = response.data
